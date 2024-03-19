@@ -6,9 +6,14 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Separator } from '@/components/ui/separator'
 import UserProgress from '@/components/user-progress'
 import { getTopTenUsers, getUserProgress, getUserSubscription } from '@/db/queries'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
 import React from 'react'
+
+export const metadata: Metadata = {
+    title: "Leaderboard"
+}
 
 const LeaderBoardPage = async () => {
     const userProgressData = getUserProgress()

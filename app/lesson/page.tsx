@@ -2,7 +2,11 @@ import { getLesson, getUserProgress, getUserSubscription } from '@/db/queries'
 import { redirect } from 'next/navigation'
 import React from 'react'
 import Quiz from './_components/quiz'
+import { Metadata } from 'next'
 
+export const metadata: Metadata = {
+    title: "Learn"
+}
 const LessonPage = async () => {
     const lessonData = getLesson()
     const userProgressData = getUserProgress()

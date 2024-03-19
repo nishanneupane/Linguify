@@ -8,7 +8,11 @@ import React from 'react'
 import Items from './_components/items'
 import Promo from '@/components/promo'
 import Quests from '@/components/quests'
+import { Metadata } from 'next'
 
+export const metadata: Metadata = {
+    title: "Shop"
+}
 const ShopPage = async () => {
     const userProgressData = getUserProgress()
     const userSubscriptionData = getUserSubscription()
@@ -23,7 +27,7 @@ const ShopPage = async () => {
     if (!userProgress || !userProgress.activeCourse) {
         redirect("/courses")
     }
-    const isPro=!!userSubscription?.isActive
+    const isPro = !!userSubscription?.isActive
     return (
         <div className='flex flex-row-reverse gap-[48px] px-6'>
             <StickyWrapper>
@@ -38,7 +42,7 @@ const ShopPage = async () => {
                         <Promo />
                     )
                 }
-                <Quests points={userProgress.points}/>
+                <Quests points={userProgress.points} />
             </StickyWrapper>
             <FeedWrapper>
                 <div className="w-full flex flex-col items-center">

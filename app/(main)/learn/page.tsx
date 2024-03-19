@@ -8,6 +8,12 @@ import { redirect } from 'next/navigation'
 import Unit from './_components/unit'
 import Promo from '@/components/promo'
 import Quests from '@/components/quests'
+import { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+    title: "Learn"
+}
 
 const LearnPage = async () => {
     const userProgressData = getUserProgress()

@@ -6,10 +6,14 @@ import { Separator } from '@/components/ui/separator'
 import UserProgress from '@/components/user-progress'
 import { getUserProgress, getUserSubscription } from '@/db/queries'
 import { quests } from '@/lib/constants'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
 import React from 'react'
 
+export const metadata: Metadata = {
+    title: "Quests"
+}
 
 const QuestsPage = async () => {
     const userProgressData = getUserProgress()
