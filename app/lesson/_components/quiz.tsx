@@ -1,7 +1,7 @@
 "use client"
 
 import Confetti from "react-confetti"
-import { challengeOptions, challenges } from '@/db/schema';
+import { challengeOptions, challenges, userSubscription } from '@/db/schema';
 import React, { useState, useTransition } from 'react'
 import Header from './header';
 import QuestionBubble from './question-bubble';
@@ -26,7 +26,9 @@ type Props = {
         completed: boolean;
         challengeOptions: typeof challengeOptions.$inferSelect[]
     })[];
-    userSubscription: any //TODO: replace with subscription db type
+    userSubscription: typeof userSubscription.$inferSelect & {
+        isActive: boolean
+    } | null;
 }
 const Quiz = ({ initialHearts, initialLessonChallenges, initialLessonId, initialPercentage, userSubscription }: Props) => {
     const { open: openHeartsModal } = useHeartsModal()
@@ -174,6 +176,7 @@ const Quiz = ({ initialHearts, initialLessonChallenges, initialLessonId, initial
                         <ResultCard
                             variant="hearts"
                             value={hearts}
+                            isPro={userSubscription?.isActive}
                         />
                     </div>
                 </div>
