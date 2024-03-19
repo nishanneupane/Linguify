@@ -123,7 +123,7 @@ export const refillHearts = async () => {
     throw new Error("User Progress not found ");
   }
 
-  if (currentUserProgress.hearts === 5) {
+  if (currentUserProgress.hearts === TOTAL_FREE_HEARTS) {
     throw new Error("Hearts are already full");
   }
 

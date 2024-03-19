@@ -6,6 +6,8 @@ import UserProgress from '@/components/user-progress'
 import { getCourseProgress, getLessonPercentage, getUnits, getUserProgress, getUserSubscription } from '@/db/queries'
 import { redirect } from 'next/navigation'
 import Unit from './_components/unit'
+import Promo from '@/components/promo'
+import Quests from '@/components/quests'
 
 const LearnPage = async () => {
     const userProgressData = getUserProgress()
@@ -28,6 +30,7 @@ const LearnPage = async () => {
     if (!courseProgress) {
         return redirect("/course")
     }
+    const isPro = !!userSubscription?.isActive
     return (
         <div className='flex gap-[48px] px-6'>
             <FeedWrapper>
@@ -55,8 +58,14 @@ const LearnPage = async () => {
                     activeCourse={userProgress.activeCourse}
                     hearts={userProgress.hearts}
                     points={userProgress.points}
-                    hasActiveSubscription={!!userSubscription?.isActive}
+                    hasActiveSubscription={isPro}
                 />
+                {
+                    !isPro && (
+                        <Promo />
+                    )
+                }
+                <Quests points={userProgress.points} />
             </StickyWrapper>
 
         </div>
