@@ -15,10 +15,18 @@ const CoursesPage = async () => {
             <h1 className="text-2xl font-bold text-neutral-700">
                 Language Courses
             </h1>
-            <List
-                courses={courses}
-                activeCourseId={userProgress?.activeCourseId}
-            />
+            {
+                (courses.length <= 0) ? (
+                    <div className='text-muted-foreground text-sm h-full w-full flex items-center justify-center'>
+                        No courses found
+                    </div>
+                ) : (
+                    <List
+                        courses={courses}
+                        activeCourseId={userProgress?.activeCourseId}
+                    />
+                )
+            }
         </div>
     )
 }
