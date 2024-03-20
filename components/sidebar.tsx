@@ -21,14 +21,14 @@ const Sidebar = ({ className }: Props) => {
             <Link href={"/learn"}>
                 <div className="pt-8 pl-4 pb-7 flex items-center gap-x-3">
                     <Image
-                        src={"mascot.svg"}
+                        src={"/mascot.svg"}
                         width={40}
                         height={40}
                         alt='Logo'
                         className='object-contain'
                     />
-                    <h1 className='text-2xl font-extrabold text-green-600 tracking-wide'>
-                    Linguify
+                    <h1 className='text-2xl font-extrabold text-sky-600 tracking-wide'>
+                        Linguify
                     </h1>
                 </div>
             </Link>
@@ -56,10 +56,10 @@ const Sidebar = ({ className }: Props) => {
             </div>
             <div className="p-4">
                 <ClerkLoading>
-                    <Loader className='h-5 w-5 text-muted-foreground animate-spin'/>
+                    <Loader className='h-5 w-5 text-muted-foreground animate-spin' />
                 </ClerkLoading>
                 <ClerkLoaded>
-                    <UserButton afterSignOutUrl='/'/>
+                    <UserButton afterSignOutUrl='/' />
                 </ClerkLoaded>
             </div>
         </div>

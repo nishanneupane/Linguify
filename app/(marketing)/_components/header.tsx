@@ -8,17 +8,18 @@ export const Header = () => {
     return (
         <header className='h-20 w-full border-b-2 border-slate-200 px-4'>
             <div className="lg:max-w-screen-lg mx-auto flex items-center justify-between h-full">
-                <div className="pt-8 pl-4 pb-7 flex items-center gap-x-3">
+                <div className="pt-8 pl-4 pb-7 flex items-center gap-x-1">
                     <Image
-                        src={"logo-no-background.svg"}
+                        src={"/mascot.svg"}
                         width={50}
                         height={50}
                         alt='Logo'
                         className='object-contain'
                     />
-                    <h1 className='md:block hidden text-2xl font-extrabold text-green-600 tracking-wide '>
+                    <h1 className='text-2xl font-extrabold text-sky-600 tracking-wide'>
                         Linguify
                     </h1>
+
                 </div>
                 <div className="flex items-center justify-center">
                     <ClerkLoading>
