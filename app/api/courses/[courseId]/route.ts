@@ -15,7 +15,7 @@ export const GET = async (
     where: eq(courses.id, params.courseId),
   });
 
-  return NextResponse.json(data[0]);
+  return NextResponse.json(data);
 };
 
 export const PUT = async (

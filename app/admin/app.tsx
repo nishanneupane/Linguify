@@ -42,7 +42,7 @@ const App = () => {
                 edit={CourseEdit}
                 recordRepresentation={"title"}
                 icon={School}
-                // options={{ label: "📚 Courses" }}
+                options={{ label: "📚 Courses" }}
             />
             <Resource
                 name="units"
