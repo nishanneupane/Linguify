@@ -10,7 +10,6 @@ const ChallengeOptionEdit = () => {
 
       <SimpleForm
         className='p-8 rounded-lg bg-transparent backdrop-blur-3xl shadow-md '
-        redirect="list"
       >
         <div className='mb-4 h-full w-full lg:w-[400px] mx-auto'>
           <TextInput
