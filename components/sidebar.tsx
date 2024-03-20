@@ -28,7 +28,7 @@ const Sidebar = ({ className }: Props) => {
                         className='object-contain'
                     />
                     <h1 className='text-2xl font-extrabold text-green-600 tracking-wide'>
-                        Lingo
+                    Linguify
                     </h1>
                 </div>
             </Link>

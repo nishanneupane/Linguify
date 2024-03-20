@@ -11,8 +11,8 @@ const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Lingo",
-    default: "Lingo"
+    template: "%s | Linguify",
+    default: "Linguify"
   },
   description: "Its an online language learning platform.",
 };

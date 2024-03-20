@@ -16,8 +16,8 @@ export const Header = () => {
                         alt='Logo'
                         className='object-contain'
                     />
-                    <h1 className='text-2xl font-extrabold text-green-600 tracking-wide'>
-                        Lingo
+                    <h1 className='md:block hidden text-2xl font-extrabold text-green-600 tracking-wide '>
+                        Linguify
                     </h1>
                 </div>
                 <div className="flex items-center justify-center">
