@@ -6,7 +6,7 @@ import CourseCreate from "./course/create"
 import CourseEdit from "./course/edit"
 import UnitList from "./unit/list"
 import UnitCreate from "./unit/create"
-import { BookCheck, Group, ListCollapse, School, Swords } from "lucide-react"
+import { BookCheck, Group, ListCollapse, Option, School, Swords } from "lucide-react"
 import { queryClient } from "./query-client"
 import { themes } from "./themes"
 import UnitEdit from "./unit/edit"
@@ -17,6 +17,9 @@ import ChallengeList from "./challenge/list"
 import ChallengeEdit from "./challenge/edit"
 import ChallengeCreate from "./challenge/create"
 import { CustomMenu } from "./custom-menu"
+import { ChallengeOptionList } from "./challengeOption/list"
+import ChallengeOptionCreate from "./challengeOption/create"
+import ChallengeOptionEdit from "./challengeOption/edit"
 
 const dataProvider = simpleRestProvider("/api")
 // const CustomLayout = () => <Layout menu={CustomMenu} />
@@ -39,6 +42,7 @@ const App = () => {
                 edit={CourseEdit}
                 recordRepresentation={"title"}
                 icon={School}
+                // options={{ label: "📚 Courses" }}
             />
             <Resource
                 name="units"
@@ -66,6 +70,15 @@ const App = () => {
                 recordRepresentation={"question"}
                 icon={Swords}
                 options={{ label: "🕐 Challenges" }}
+            />
+            <Resource
+                name="challengeOptions"
+                list={ChallengeOptionList}
+                create={ChallengeOptionCreate}
+                edit={ChallengeOptionEdit}
+                recordRepresentation={"text"}
+                icon={Option}
+                options={{ label: "💿 Options" }}
             />
         </Admin>
     )
