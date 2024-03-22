@@ -20,6 +20,7 @@ const main = async () => {
     await db.delete(schema.challengeOptions);
     await db.delete(schema.challengeProgress);
     await db.delete(schema.userSubscription);
+    await db.delete(schema.media);
 
     console.log("Resetting finished");
   } catch (error) {

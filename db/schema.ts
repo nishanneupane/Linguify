@@ -143,3 +143,9 @@ export const userSubscription = pgTable("user_subscription", {
   stripePriceId: text("stripe_price_id").notNull(),
   stripeCurrentPeriodEnd: timestamp("stripe_current_period_end").notNull(),
 });
+
+export const media = pgTable("media", {
+  id: serial("id").primaryKey(),
+  userId: text("user_id").notNull().unique(),
+  image: text("image").notNull(),
+});

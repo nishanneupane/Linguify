@@ -1,17 +1,11 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
-import { isAdmin } from '@/lib/admin'
-import { redirect } from 'next/navigation'
+import CoursesForm from './courses/_components/course-form'
+import CoursesPage from './courses/page'
 
-const App = dynamic(() => import("./app"), { ssr: false })
-
-const AdminPage =  () => {
-    if (!isAdmin()) {
-        redirect("/")
-    }
-    return (
-        <App />
-    )
+const AdminPage = () => {
+  return (
+    <CoursesPage />
+  )
 }
 
 export default AdminPage
